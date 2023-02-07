@@ -1,0 +1,68 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+}
+.jumbotron-dark {
+  background-color: rgb(72, 72, 72);
+  color: #fff;
+}
+.project-dark {
+  background-color: rgb(72, 72, 72);
+}
+.project-darkh2 {
+  color: white;
+}
+
+.about-dark {
+  background-color: rgb(104, 102, 102);
+  color: white;
+}
+
+body {
+  min-height: 3000px;
+}
+
+.project {
+  background-color: #e2edff;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+.jumbotron ul {
+  list-style-type: none;
+}
+
+.jumbotron ul li {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+ul li:nth-child(5) {
+  border-radius: 50%;
+}
+
+.wave13-dark {
+  fill: rgb(104, 102, 102);
+}
+
+.wave2-dark {
+  fill: rgb(72, 72, 72);
+}
+
+.wave4-dark {
+  fill: rgb(33, 37, 41);
+}
+
+.contact {
+  background-color: rgb(104, 102, 102);
+  color: white;
+}
+
+.card a{
+  text-decoration: none;
+  color: black;
+}
