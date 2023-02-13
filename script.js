@@ -35,7 +35,17 @@ const message = document.getElementById("pesan");
 
 button.addEventListener("click", async function (e) {
   e.preventDefault();
-  // Fetch message POST
+  ValidateEmail(fetchData());
+});
+
+// Hapus pesan
+function deleteMsg() {
+  const form = [name, email, subjek, message];
+  form.forEach((e) => (e.value = ""));
+}
+
+// Fetch message POST
+async function fetchData() {
   const options = {
     method: "POST",
     headers: {
