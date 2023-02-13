@@ -23,3 +23,38 @@ mode.addEventListener('click', () => {
         dom[i].classList.toggle(kelas[i]);
     }
 })
+
+
+// Mengirim email
+
+// ambil DOM element form
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const subjek = document.getElementById("subjek");
+const message = document.getElementById("pesan");
+
+button.addEventListener("click", async function (e) {
+  e.preventDefault();
+  // Fetch message POST
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "X-RapidAPI-Key": "7b348bb20cmsh5adf4c315a2c8a3p1d7a1ajsna1079d9dd43e",
+      "X-RapidAPI-Host": "rapidprod-sendgrid-v1.p.rapidapi.com",
+    },
+    body: `{"personalizations":[{"to":[{"email":"pantekzonk@gmail.com"}],"subject":"${name.value} | ${subjek.value}"}],"from":{"email":"${email.value}"},"content":[{"type":"text/plain","value":"${message.value}"}]}`,
+  };
+
+  await fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+    deleteMsg();
+});
+
+// Hapus pesan
+function deleteMsg(){
+    const form = [name,email,subjek,message];
+    form.forEach(e => e.value = "");
+}
