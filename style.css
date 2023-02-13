@@ -66,3 +66,31 @@ ul li:nth-child(5) {
   text-decoration: none;
   color: black;
 }
+
+
+form .success{
+  background-color: green;
+  color: white;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 4px;
+  transition: .2s;
+}
+
+form .fail{
+  background-color: red;
+  color: white;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 4px;
+  transition: .2s;
+}
+
