@@ -47,14 +47,36 @@ button.addEventListener("click", async function (e) {
   };
 
   await fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", options)
-    .then((response) => response.json())
+    .then((response) => {
+      response.json();
+      const msg = document.querySelector(".msg");
+      if (response.ok) {
+        console.log("OK");
+        msg.classList.add("success");
+        msg.innerHTML = "Success";
+        if (msg.classList.contains("fail")) {
+          msg.classList.toggle("fail");
+        }
+      } else if (response.status) {
+        msg.classList.add('fail');
+        msg.innerHTML = response.statusText;
+      } else {
+        console.log("NOT OK");
+        msg.classList.add("fail");
+        msg.innerHTML = "Email yang anda masukan salah dan/atau masukan form kosong";
+        if (msg.classList.contains("success")) {
+          msg.classList.toggle("success");
+        }
+      }
+    })
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
-    deleteMsg();
-});
+  deleteMsg();
+}
 
-// Hapus pesan
-function deleteMsg(){
-    const form = [name,email,subjek,message];
-    form.forEach(e => e.value = "");
+function ValidateEmail(fetchData) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) && name.value != "" && subjek.value != "" && message.value != "") {
+    fetchData();
+  }
+  return false;
 }
