@@ -61,7 +61,6 @@ async function fetchData() {
       response.json();
       const msg = document.querySelector(".msg");
       if (response.ok) {
-        console.log("OK");
         msg.classList.add("success");
         msg.innerHTML = "Success";
         if (msg.classList.contains("fail")) {
@@ -71,7 +70,6 @@ async function fetchData() {
         msg.classList.add('fail');
         msg.innerHTML = response.statusText;
       } else {
-        console.log("NOT OK");
         msg.classList.add("fail");
         msg.innerHTML = "Email yang anda masukan salah dan/atau masukan form kosong";
         if (msg.classList.contains("success")) {
