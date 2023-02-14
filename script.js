@@ -67,7 +67,7 @@ async function fetchData() {
         if (msg.classList.contains("fail")) {
           msg.classList.toggle("fail");
         }
-      } else if (response.status === "429") {
+      } else if (response.status === 429) {
         msg.classList.add('fail');
         msg.innerHTML = response.statusText;
       } else {
