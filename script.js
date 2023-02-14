@@ -48,6 +48,7 @@ function deleteMsg() {
 async function fetchData() {
   const options = {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "content-type": "application/json",
       "X-RapidAPI-Key": "7b348bb20cmsh5adf4c315a2c8a3p1d7a1ajsna1079d9dd43e",
