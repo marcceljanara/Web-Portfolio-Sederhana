@@ -33,7 +33,7 @@ const email = document.getElementById("email");
 const subjek = document.getElementById("subjek");
 const message = document.getElementById("pesan");
 
-button.addEventListener("click", async function (e) {
+button.addEventListener("click", function (e) {
   e.preventDefault();
   ValidateEmail(fetchData());
 });
