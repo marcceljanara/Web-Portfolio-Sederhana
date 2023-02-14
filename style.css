@@ -68,7 +68,7 @@ ul li:nth-child(5) {
 }
 
 
-form .success{
+form .msg.success{
   background-color: green;
   color: white;
   width: fit-content;
@@ -81,7 +81,7 @@ form .success{
   transition: .2s;
 }
 
-form .fail{
+form .msg.fail{
   background-color: red;
   color: white;
   width: fit-content;
